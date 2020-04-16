@@ -1,3 +1,9 @@
 #!/bin/bash
 
-printf "package main\n\nfunc getBytes() []byte {\n    return []byte(\`---\n%s\`)\n}" "$(cat my.yaml)" > gen.go
+echo "package main
+
+func getBytes() []byte {
+    return []byte(\`---
+$(cat my.yaml)\`)
+}
+" > gen.go
